@@ -79,8 +79,9 @@ def display_graph(question):
 
 
     elif question=='which is the most prefered ship Mode':
-        shipmode=newdf.groupby(['Ship_Mode'])['Sales'].sum().reset_index(name="counts")
-        fig = px.bar(shipmode,x=shipmode.Ship_Mode,y=shipmode.counts, title= "Bar graph for the Most Prefered Ship mode",color=shipmode.Ship_Mode)
+        shipmode=newdf.groupby(['Ship Mode'])['Sales'].sum().reset_index(name="counts")
+        fig = px.bar(shipmode,x='Ship Mode',y='counts', title= "Bar graph for the Most Prefered Ship mode",color='Ship Mode')
+
         return fig   
 
 
